@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="section-padding pt-32 fade-in">
+    <section className="section-padding pt-36 fade-in">
       <div className="space-y-6">
         <h1 className="text-4xl md:text-6xl font-light leading-tight">
           self-taught
