@@ -26,7 +26,6 @@ async function fetchGitHubRepos(username: string): Promise<GitHubRepo[]> {
     }
 
     const repos: GitHubRepo[] = await response.json();
-    console.log({ repos });
 
     // Filter out forks
     const originalRepos = repos.filter((repo) => !repo.fork);
@@ -93,10 +92,8 @@ async function fetchGitHubRepos(username: string): Promise<GitHubRepo[]> {
 }
 
 export default async function ReposComponent() {
-  console.log("ReposComponent");
   // Replace 'dorjitshering' with your actual GitHub username
   const repos = await fetchGitHubRepos("dorji-dev");
-  console.log(repos);
 
   // Fallback repos if API fails
   const fallbackRepos = [
