@@ -25,7 +25,7 @@ export default function AboutComponent() {
               <div className="flex items-start space-x-3">
                 <span className="text-gray-400 mt-1">•</span>
                 <span className="text-gray-600">
-                  earned 5 certificates of academic excellence from His Majesty
+                  earned 4 certificates of academic excellence from His Majesty
                   (apparently I was good at school, just not at staying in it)
                 </span>
               </div>
