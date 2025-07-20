@@ -19,7 +19,7 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="h-full bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
         {/* Back to home link */}
         <div className="mb-12">

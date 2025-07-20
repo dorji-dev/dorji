@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article content */}
         <article>
           <div className="max-w-3xl mx-auto">
-            <div className="bg-card p-8 md:p-12 lg:p-16 border border-border rounded-lg">
+            <div className=" border-y py-4 border-border">
               <MDXRemote
                 source={post.content}
                 components={components}
