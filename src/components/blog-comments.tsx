@@ -25,7 +25,6 @@ const BlogComments = () => {
         emitMetadata="0"
         inputPosition="top"
         theme={theme === "dark" ? "noborder_dark" : "noborder_light"}
-        loading="lazy"
       />
     </div>
   );
