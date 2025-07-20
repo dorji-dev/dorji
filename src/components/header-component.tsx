@@ -35,6 +35,12 @@ export default function HeaderComponent() {
               about
             </a>
             <a
+              href="/blog"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
+            >
+              blog
+            </a>
+            <a
               href="#repos"
               className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
             >
@@ -96,6 +102,13 @@ export default function HeaderComponent() {
                 className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
               >
                 about
+              </a>
+              <a
+                href="/blog"
+                onClick={closeMenu}
+                className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
+              >
+                blog
               </a>
               <a
                 href="#repos"
