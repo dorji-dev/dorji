@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import BlogComments from "@/components/blog-comments";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -120,139 +121,101 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* Back to blog */}
-        <div className="mb-12">
-          <div className="flex items-center space-x-4">
-            <Link
-              href="/"
-              className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-200 group"
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      {/* Article header */}
+      <header className="mb-16 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
+            {post.title}
+          </h1>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground mb-6">
+            <span className="font-medium text-foreground hover:text-foreground/80 transition-colors duration-200">
+              {post.author}
+            </span>
+            <span className="text-muted-foreground/40">|</span>
+            <time
+              dateTime={post.date}
+              className="font-medium hover:text-foreground/80 transition-colors duration-200"
             >
+              {format(new Date(post.date), "MMM d, yyyy")}
+            </time>
+            <span className="text-muted-foreground/40">|</span>
+            <div className="flex items-center space-x-1">
               <svg
-                className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform duration-200"
+                className="w-4 h-4 text-muted-foreground"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
+                  strokeWidth={1.5}
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              Home
+              <span className="font-medium hover:text-foreground/80 transition-colors duration-200">
+                {post.readingTime}
+              </span>
+            </div>
+          </div>
+
+          {post.tags.length > 0 && (
+            <div className="flex flex-wrap justify-center gap-3">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-sm px-4 py-2 bg-muted text-muted-foreground rounded-md font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Article content */}
+      <article>
+        <div className="max-w-3xl mx-auto">
+          <div className=" border-y py-4 border-border">
+            <MDXRemote
+              source={post.content}
+              components={components}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [rehypeHighlight],
+                },
+              }}
+            />
+          </div>
+        </div>
+      </article>
+
+      <BlogComments />
+
+      {/* Article footer */}
+      <footer className="mt-16 py-8 bg-background border-t border-border">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center px-6 py-3 bg-muted text-foreground font-semibold rounded-xl shadow-sm hover:bg-muted-foreground hover:text-background hover:shadow transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
+            >
+              Back to Home
             </Link>
-            <span className="text-muted-foreground/50">/</span>
             <Link
               href="/blog"
-              className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-200 group"
+              className="inline-flex items-center justify-center px-6 py-3 border-2 border-border text-foreground font-semibold rounded-xl hover:bg-muted hover:border-muted-foreground/50 hover:shadow transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
             >
-              Blog
+              View All Posts
             </Link>
           </div>
         </div>
-
-        {/* Article header */}
-        <header className="mb-16 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
-              {post.title}
-            </h1>
-
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground mb-8">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-                  <span className="text-foreground text-xs font-bold">DT</span>
-                </div>
-                <span>by {post.author}</span>
-              </div>
-              <span className="text-muted-foreground/50">•</span>
-              <time dateTime={post.date}>
-                {format(new Date(post.date), "MMMM dd, yyyy")}
-              </time>
-              <span className="text-muted-foreground/50">•</span>
-              <div className="flex items-center space-x-1">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span>{post.readingTime}</span>
-              </div>
-            </div>
-
-            {post.tags.length > 0 && (
-              <div className="flex flex-wrap justify-center gap-3">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-sm px-4 py-2 bg-muted text-muted-foreground rounded-md font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-        </header>
-
-        {/* Article content */}
-        <article>
-          <div className="max-w-3xl mx-auto">
-            <div className=" border-y py-4 border-border">
-              <MDXRemote
-                source={post.content}
-                components={components}
-                options={{
-                  mdxOptions: {
-                    remarkPlugins: [remarkGfm],
-                    rehypePlugins: [rehypeHighlight],
-                  },
-                }}
-              />
-            </div>
-          </div>
-        </article>
-
-        {/* Article footer */}
-        <footer className="mt-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-muted/30 p-8 md:p-12 rounded-lg border border-border text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Thanks for reading!
-              </h3>
-              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                I hope you found this article helpful. Feel free to reach out if
-                you have any questions or feedback.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium rounded-lg hover:bg-muted-foreground transition-colors duration-200"
-                >
-                  Back to home
-                </Link>
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-border text-foreground font-medium rounded-lg hover:bg-muted transition-colors duration-200"
-                >
-                  View all posts
-                </Link>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+      </footer>
     </div>
   );
 }

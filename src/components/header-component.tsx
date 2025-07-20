@@ -20,18 +20,18 @@ export default function HeaderComponent() {
       <nav className="max-w-[700px] mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="text-lg font-semibold font-mono text-foreground hover:text-muted-foreground transition-colors cursor-pointer">
-            dev.
+            dev.dt
           </div>
 
           <div className="hidden md:flex space-x-6 items-center">
             <Link
-              href="#hero"
+              href="/"
               className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-105"
             >
               home
             </Link>
             <Link
-              href="#about"
+              href="/#about"
               className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-105"
             >
               about
@@ -43,13 +43,13 @@ export default function HeaderComponent() {
               blog
             </Link>
             <Link
-              href="#repos"
+              href="/#repos"
               className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-105"
             >
               repos
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-105"
             >
               contact
@@ -96,14 +96,14 @@ export default function HeaderComponent() {
           <div className="md:hidden mt-4 pt-4 border-t border-border/60 animate-fade-in">
             <div className="flex flex-col space-y-3">
               <Link
-                href="#hero"
+                href="/"
                 onClick={closeMenu}
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg px-3 py-2 transition-all duration-200"
               >
                 home
               </Link>
               <Link
-                href="#about"
+                href="/#about"
                 onClick={closeMenu}
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg px-3 py-2 transition-all duration-200"
               >
@@ -117,14 +117,14 @@ export default function HeaderComponent() {
                 blog
               </Link>
               <Link
-                href="#repos"
+                href="/#repos"
                 onClick={closeMenu}
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg px-3 py-2 transition-all duration-200"
               >
                 repos
               </Link>
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={closeMenu}
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg px-3 py-2 transition-all duration-200"
               >
