@@ -24,6 +24,7 @@ Let's start with what **doesn't** work well:
 ```
 
 **Why fixed heights fail:**
+
 - They don't adapt to different screen sizes
 - Dynamic headers or navigation break the layout
 - Content above or below the scrollable area causes issues
@@ -54,7 +55,7 @@ The solution lies in using flexbox properties strategically. Here's the core pri
     <h1>Page Title</h1>
     <nav>Navigation here</nav>
   </header>
-  
+
   <!-- Flexible Content Container -->
   <div class="flex-1 overflow-hidden">
     <!-- Actual Scrollable Content -->
@@ -110,7 +111,7 @@ function ProjectBoard() {
       <header className="h-16 bg-gray-900 text-white flex items-center px-4">
         <h1>Project Board</h1>
       </header>
-      
+
       {/* Board Container */}
       <div className="flex-1 overflow-hidden">
         {/* Horizontal Scrollable Board */}
@@ -122,7 +123,7 @@ function ProjectBoard() {
               <div className="p-4 border-b">
                 <h2>To Do</h2>
               </div>
-              
+
               {/* Column Content - Scrollable */}
               <div className="flex-1 overflow-hidden">
                 <div className="h-full overflow-y-auto p-4 space-y-3">
@@ -133,7 +134,7 @@ function ProjectBoard() {
                 </div>
               </div>
             </div>
-            
+
             {/* More columns... */}
           </div>
         </div>
@@ -148,10 +149,12 @@ function ProjectBoard() {
 Let me break down each Tailwind class and its purpose:
 
 ### Container Setup
+
 - `h-[calc(100dvh-64px)]` - Sets known height (viewport minus header)
 - `flex flex-col` - Creates vertical flex container
 
 ### Content Distribution
+
 - `flex-1` - Takes remaining space after other flex items
 - `overflow-hidden` - Prevents container from growing beyond allocated space
 - `h-full` - Makes child take full height of flex-1 container
@@ -167,7 +170,7 @@ function ComplexLayout() {
     <div className="h-screen flex flex-col">
       {/* Header */}
       <header className="h-16 bg-blue-600">Header</header>
-      
+
       {/* Main Content */}
       <div className="flex-1 overflow-hidden flex">
         {/* Sidebar */}
@@ -179,7 +182,7 @@ function ComplexLayout() {
             </div>
           </div>
         </aside>
-        
+
         {/* Main Area */}
         <main className="flex-1 overflow-hidden flex flex-col">
           <div className="p-4 border-b">Page Header</div>
@@ -206,6 +209,7 @@ function ComplexLayout() {
 ## Common Mistakes to Avoid
 
 ### ❌ Don't do this:
+
 ```css
 .container {
   height: 100vh; /* Ignores header */
@@ -214,6 +218,7 @@ function ComplexLayout() {
 ```
 
 ### ❌ Or this:
+
 ```css
 .scrollable {
   max-height: 400px; /* Fixed height again */
@@ -222,6 +227,7 @@ function ComplexLayout() {
 ```
 
 ### ✅ Do this instead:
+
 ```css
 .container {
   height: calc(100dvh - var(--header-height));
@@ -243,6 +249,7 @@ function ComplexLayout() {
 ## Browser Support
 
 This technique works in all modern browsers:
+
 - ✅ Chrome/Edge (Chromium)
 - ✅ Firefox
 - ✅ Safari
@@ -260,7 +267,3 @@ The flex method for creating scrollable layouts is a game-changer. It eliminates
 4. **Scrollable content** with `h-full overflow-auto`
 
 This is the same technique used by GitHub, Linear, Notion, and many other modern web applications. Master this pattern, and you'll never struggle with scrollable layouts again.
-
----
-
-*Have you tried this technique in your projects? I'd love to hear about your experience or any variations you've discovered!*

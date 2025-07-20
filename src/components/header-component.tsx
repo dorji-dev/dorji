@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function HeaderComponent() {
@@ -22,36 +23,36 @@ export default function HeaderComponent() {
           </div>
 
           <div className="hidden md:flex space-x-6">
-            <a
+            <Link
               href="#hero"
               className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
             >
               home
-            </a>
-            <a
+            </Link>
+            <Link
               href="#about"
               className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
             >
               about
-            </a>
-            <a
+            </Link>
+            <Link
               href="/blog"
               className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
             >
               blog
-            </a>
-            <a
+            </Link>
+            <Link
               href="#repos"
               className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
             >
               repos
-            </a>
-            <a
+            </Link>
+            <Link
               href="#contact"
               className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-105"
             >
               contact
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,41 +90,41 @@ export default function HeaderComponent() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pt-4 border-t border-gray-200/60 animate-fade-in">
             <div className="flex flex-col space-y-3">
-              <a
+              <Link
                 href="#hero"
                 onClick={closeMenu}
                 className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
               >
                 home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#about"
                 onClick={closeMenu}
                 className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
               >
                 about
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/blog"
                 onClick={closeMenu}
                 className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
               >
                 blog
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#repos"
                 onClick={closeMenu}
                 className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
               >
                 repos
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#contact"
                 onClick={closeMenu}
                 className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2 transition-all duration-200"
               >
                 contact
-              </a>
+              </Link>
             </div>
           </div>
         )}

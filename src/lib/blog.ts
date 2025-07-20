@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import readingTime from 'reading-time';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import readingTime from "reading-time";
 
 export interface BlogPost {
   slug: string;
@@ -15,7 +15,7 @@ export interface BlogPost {
   excerpt: string;
 }
 
-const BLOG_PATH = path.join(process.cwd(), 'content/blog');
+const BLOG_PATH = path.join(process.cwd(), "content/blog");
 
 export function getAllBlogPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_PATH)) {
@@ -24,23 +24,23 @@ export function getAllBlogPosts(): BlogPost[] {
 
   const files = fs.readdirSync(BLOG_PATH);
   const posts = files
-    .filter((file) => file.endsWith('.mdx'))
+    .filter((file) => file.endsWith(".mdx"))
     .map((file) => {
-      const slug = file.replace(/\.mdx$/, '');
+      const slug = file.replace(/\.mdx$/, "");
       const fullPath = path.join(BLOG_PATH, file);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
 
       return {
         slug,
-        title: data.title || '',
-        description: data.description || '',
-        date: data.date || '',
+        title: data.title || "",
+        description: data.description || "",
+        date: data.date || "",
         tags: data.tags || [],
-        author: data.author || 'Dorji Tshering',
+        author: data.author || "Dorji Tshering",
         readingTime: readingTime(content).text,
         content,
-        excerpt: data.excerpt || content.slice(0, 200) + '...',
+        excerpt: data.excerpt || content.slice(0, 200) + "...",
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -51,21 +51,21 @@ export function getAllBlogPosts(): BlogPost[] {
 export function getBlogPost(slug: string): BlogPost | null {
   try {
     const fullPath = path.join(BLOG_PATH, `${slug}.mdx`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
     return {
       slug,
-      title: data.title || '',
-      description: data.description || '',
-      date: data.date || '',
+      title: data.title || "",
+      description: data.description || "",
+      date: data.date || "",
       tags: data.tags || [],
-      author: data.author || 'Dorji Tshering',
+      author: data.author || "Dorji Tshering",
       readingTime: readingTime(content).text,
       content,
-      excerpt: data.excerpt || content.slice(0, 200) + '...',
+      excerpt: data.excerpt || content.slice(0, 200) + "...",
     };
-  } catch (error) {
+  } catch {
     return null;
   }
 }
