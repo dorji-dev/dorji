@@ -8,78 +8,78 @@ export default function AboutComponent() {
   const professionalYearsText = `${yearsProfessional}+ years`;
 
   return (
-    <section id="about" className="py-16 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-25">
       <div className="max-w-[700px] mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-xl font-semibold mb-8 text-gray-900 font-mono">about</h2>
-            <div className="space-y-3">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="animate-slide-up">
+            <h2 className="text-2xl font-bold mb-10 text-gray-900 font-mono">about</h2>
+            <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span className="text-gray-600">
+                <span className="text-blue-400 mt-1.5 text-lg">•</span>
+                <span className="text-gray-700 leading-relaxed">
                   dropped out of college in late 2019 (plot twist: it was the
                   right decision)
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span className="text-gray-600">
+                <span className="text-blue-400 mt-1.5 text-lg">•</span>
+                <span className="text-gray-700 leading-relaxed">
                   earned 4 certificates of academic excellence from His Majesty
                   (apparently I was good at school, just not at staying in it)
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span className="text-gray-600">
+                <span className="text-blue-400 mt-1.5 text-lg">•</span>
+                <span className="text-gray-700 leading-relaxed">
                   self-taught through documentation, tutorials, and countless
                   &quot;why doesn&apos;t this work?&quot; moments
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span className="text-gray-600">
+                <span className="text-blue-400 mt-1.5 text-lg">•</span>
+                <span className="text-gray-700 leading-relaxed">
                   passionate about clean code, minimal design, and turning
                   coffee into websites
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span className="text-gray-600">
+                <span className="text-blue-400 mt-1.5 text-lg">•</span>
+                <span className="text-gray-700 leading-relaxed">
                   still googling &quot;how to center a div&quot; occasionally
                   (we all do)
                 </span>
               </div>
             </div>
           </div>
-          <div className="space-y-6">
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="text-sm text-gray-500 mb-1">experience</div>
-              <div className="font-medium">
+          <div className="space-y-8 animate-slide-up">
+            <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-200/50 hover:shadow-soft-lg transition-all duration-300">
+              <div className="text-sm text-gray-500 mb-2 font-mono uppercase tracking-wide">experience</div>
+              <div className="font-semibold text-lg text-gray-900">
                 {professionalYearsText} coding professionally
               </div>
             </div>
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="text-sm text-gray-500 mb-1">specialization</div>
-              <div className="font-medium">Frontend Development</div>
+            <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-200/50 hover:shadow-soft-lg transition-all duration-300">
+              <div className="text-sm text-gray-500 mb-2 font-mono uppercase tracking-wide">specialization</div>
+              <div className="font-semibold text-lg text-gray-900">Frontend Development</div>
             </div>
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="text-sm text-gray-500 mb-1">tech stack</div>
-              <div className="space-y-1">
+            <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-200/50 hover:shadow-soft-lg transition-all duration-300">
+              <div className="text-sm text-gray-500 mb-3 font-mono uppercase tracking-wide">tech stack</div>
+              <div className="space-y-2">
                 <div className="flex flex-wrap gap-2">
                   <a
                     href="https://react.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 underline decoration-gray-400 underline-offset-2 hover:decoration-gray-900 transition-colors"
+                    className="text-sm font-medium text-blue-600 hover:text-blue-800 underline decoration-blue-400 underline-offset-2 hover:decoration-blue-800 transition-all duration-200 hover:scale-105"
                   >
                     React
                   </a>
-                  <span className="text-gray-400">•</span>
+                  <span className="text-gray-300">•</span>
                   <a
                     href="https://nextjs.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 underline decoration-gray-400 underline-offset-2 hover:decoration-gray-900 transition-colors"
+                    className="text-sm font-medium text-blue-600 hover:text-blue-800 underline decoration-blue-400 underline-offset-2 hover:decoration-blue-800 transition-all duration-200 hover:scale-105"
                   >
                     Next.js
                   </a>
@@ -89,16 +89,16 @@ export default function AboutComponent() {
                     href="https://www.typescriptlang.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 underline decoration-gray-400 underline-offset-2 hover:decoration-gray-900 transition-colors"
+                    className="text-sm font-medium text-blue-600 hover:text-blue-800 underline decoration-blue-400 underline-offset-2 hover:decoration-blue-800 transition-all duration-200 hover:scale-105"
                   >
                     TypeScript
                   </a>
-                  <span className="text-gray-400">•</span>
+                  <span className="text-gray-300">•</span>
                   <a
                     href="https://ui.shadcn.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 underline decoration-gray-400 underline-offset-2 hover:decoration-gray-900 transition-colors"
+                    className="text-sm font-medium text-blue-600 hover:text-blue-800 underline decoration-blue-400 underline-offset-2 hover:decoration-blue-800 transition-all duration-200 hover:scale-105"
                   >
                     shadcn/ui
                   </a>
