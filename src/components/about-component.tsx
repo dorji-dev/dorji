@@ -1,5 +1,4 @@
 export default function AboutComponent() {
-  // Calculate years of professional experience since 2022
   const professionalStartDate = new Date("2023-04-07");
   const currentDate = new Date();
   const yearsProfessional = Math.floor(

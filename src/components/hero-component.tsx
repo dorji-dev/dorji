@@ -1,5 +1,4 @@
 export default function HeroComponent() {
-  // Calculate years since mid-2020 (July 1, 2020)
   const startDate = new Date("2020-07-01");
   const currentDate = new Date();
   const yearsSinceCoding = Math.floor(

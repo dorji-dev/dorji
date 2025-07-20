@@ -19,7 +19,6 @@ export default function HeaderComponent() {
         <div className="flex justify-between items-center">
           <div className="text-lg font-medium">dev.</div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             <a
               href="#hero"
