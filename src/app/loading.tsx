@@ -4,7 +4,7 @@ export default function Loading() {
       <div className="max-w-[700px] mx-auto px-6">
         <div className="space-y-12 animate-fade-in">
           {/* Hero skeleton */}
-          <div className="bg-white p-8 rounded-xl shadow-soft border border-gray-200/50">
+          <div className="bg-white p-8 rounded-xl border border-gray-200/50">
             <div className="space-y-6">
               <div className="space-y-3">
                 <div className="h-14 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg animate-pulse"></div>
@@ -20,9 +20,11 @@ export default function Loading() {
 
           {/* Loading indicator */}
           <div className="text-center">
-            <div className="inline-flex items-center space-x-3 text-gray-600 bg-white px-6 py-3 rounded-full shadow-soft border border-gray-200/50">
+            <div className="inline-flex items-center space-x-3 text-gray-600 bg-white px-6 py-3 rounded-full border border-gray-200/50">
               <div className="w-5 h-5 border-2 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
-              <span className="text-sm font-medium font-mono">Loading portfolio...</span>
+              <span className="text-sm font-medium font-mono">
+                Loading portfolio...
+              </span>
             </div>
           </div>
         </div>

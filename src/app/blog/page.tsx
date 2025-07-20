@@ -19,13 +19,13 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
         {/* Back to home link */}
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200 group"
+            className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-200 group"
           >
             <svg
               className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform duration-200"
@@ -46,15 +46,15 @@ export default function BlogPage() {
 
         {/* Hero section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
             Thoughts, tutorials, and insights about web development,
             programming, and technology.
           </p>
           {posts.length > 0 && (
-            <div className="inline-flex items-center space-x-2 text-sm text-gray-500 bg-gray-50 px-4 py-2 rounded-lg border border-gray-200">
+            <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground bg-muted px-4 py-2 rounded-lg border border-border">
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -78,10 +78,10 @@ export default function BlogPage() {
         {/* Content section */}
         {posts.length === 0 ? (
           <div className="text-center py-20">
-            <div className="bg-gray-50 p-12 rounded-lg border border-gray-200 max-w-md mx-auto">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-muted p-12 rounded-lg border border-border max-w-md mx-auto">
+              <div className="w-16 h-16 bg-muted/50 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg
-                  className="w-8 h-8 text-gray-400"
+                  className="w-8 h-8 text-muted-foreground"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -94,10 +94,10 @@ export default function BlogPage() {
                   />
                 </svg>
               </div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-3">
+              <h2 className="text-2xl font-semibold text-foreground mb-3">
                 No posts yet
               </h2>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Check back soon for new content!
               </p>
             </div>

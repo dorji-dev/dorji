@@ -6,9 +6,9 @@ import ContactComponent from "@/components/contact-component";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="h-[100dvh] flex flex-col">
       <HeaderComponent />
-      <main>
+      <main className="flex-1 overflow-y-auto">
         <HeroComponent />
         <AboutComponent />
         <ReposComponent />
