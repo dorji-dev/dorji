@@ -92,7 +92,7 @@ export default async function ReposComponent() {
   return (
     <section id="repos" className="py-16 bg-gray-50">
       <div className="max-w-[700px] mx-auto px-6">
-        <h2 className="text-xl font-medium mb-8 text-gray-900">
+        <h2 className="text-xl font-semibold mb-8 text-gray-900 font-mono">
           github repositories
         </h2>
         {repos.length === 0 ? (

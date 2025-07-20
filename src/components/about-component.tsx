@@ -12,7 +12,7 @@ export default function AboutComponent() {
       <div className="max-w-[700px] mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-xl font-medium mb-8 text-gray-900">about</h2>
+            <h2 className="text-xl font-semibold mb-8 text-gray-900 font-mono">about</h2>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <span className="text-gray-400 mt-1">•</span>

@@ -3,7 +3,7 @@ export default function ContactComponent() {
     <section id="contact" className="py-16">
       <div className="max-w-[700px] mx-auto px-6">
         <div className="text-center space-y-8">
-          <h2 className="text-xl font-medium mb-8 text-gray-900">
+          <h2 className="text-xl font-semibold mb-8 text-gray-900 font-mono">
             let&apos;s connect
           </h2>
           <div className="flex justify-center space-x-8">

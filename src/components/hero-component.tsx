@@ -12,10 +12,10 @@ export default function HeroComponent() {
       <div className="max-w-[700px] mx-auto px-6">
         <div className="space-y-6">
           <div>
-            <h1 className="text-4xl md:text-5xl font-medium leading-tight text-gray-900">
+            <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-gray-900">
               Dorji Tshering
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mt-2">
+            <p className="text-xl md:text-2xl text-gray-600 mt-2 font-mono">
               self-taught developer
             </p>
           </div>

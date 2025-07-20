@@ -17,7 +17,7 @@ export default function HeaderComponent() {
     <header className="border-b border-gray-100">
       <nav className="max-w-[700px] mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-lg font-medium">dev.</div>
+          <div className="text-lg font-medium font-mono">dev.</div>
 
           <div className="hidden md:flex space-x-6">
             <a
