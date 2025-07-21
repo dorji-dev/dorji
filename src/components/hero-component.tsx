@@ -1,53 +1,83 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function HeroComponent() {
-  const startDate = new Date("2020-07-01");
-  const currentDate = new Date();
   const yearsSinceCoding = Math.floor(
-    (currentDate.getTime() - startDate.getTime()) /
+    (Date.now() - new Date("2020-07-01").getTime()) /
       (1000 * 60 * 60 * 24 * 365.25)
   );
-  const yearsText = `${yearsSinceCoding}+ years`;
 
   return (
-    <section id="hero" className="py-24">
-      <div className="max-w-2xl mx-auto px-6">
-        <div className="space-y-8">
-          <div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight text-foreground tracking-tight">
-              Dorji Tshering
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mt-4 font-mono">
-              self-taught developer
-            </p>
-          </div>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            {yearsText} of learning, building, and growing.
-            <br />
-            turning ideas into digital experiences.
-          </p>
-          <div className="pt-4">
-            <div className="inline-flex items-center flex-wrap bg-muted rounded-lg px-4 py-2 border border-border">
-              <span className="text-muted-foreground mr-2 text-sm">
-                Currently working at
-              </span>
-              <span className="font-medium text-foreground flex items-center">
-                <svg
-                  className="w-4 h-4 mr-1.5 text-red-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Selise Bhutan
-              </span>
-            </div>
-          </div>
-        </div>
+    <section className="relative flex flex-col space-y-6">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/20 to-background/40" />
+
+      {/* Name and Title */}
+      <div className="space-y-2">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold leading-tight text-foreground tracking-tight"
+        >
+          Dorji Tshering
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-lg font-mono text-muted-foreground"
+        >
+          self-taught developer
+        </motion.p>
       </div>
+
+      {/* Tagline */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-muted-foreground"
+      >
+        <p>
+          <span className="font-bold whitespace text-foreground text-xl">
+            {yearsSinceCoding}+ years
+          </span>
+          <span className="ml-2">of learning, building, and growing.</span>
+          <br />
+          Turning ideas into digital experiences.
+        </p>
+      </motion.div>
+
+      {/* Current Work */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="pt-4"
+      >
+        <div className="inline-flex items-center flex-wrap rounded-lg px-3 py-1.5 border border-border">
+          <span className="text-muted-foreground mr-2">
+            Currently working at
+          </span>
+          <span className="font-medium text-foreground flex items-center">
+            <svg
+              className="w-3.5 h-3.5 mr-1.5 text-red-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Selise Bhutan
+          </span>
+        </div>
+      </motion.div>
     </section>
   );
 }

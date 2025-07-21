@@ -1,23 +1,18 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Metadata } from "next";
+import { Ysabeau } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import HeaderComponent from "@/components/header-component";
 
-const inter = Inter({
-  variable: "--font-inter",
+const ysabeau = Ysabeau({
+  variable: "--font-ysabeau",
   subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
   title: "Dorji Tshering",
-  description:
-    "I am a software engineer based in Bhutan, specializing in building web applications.",
+  description: "Software engineer specializing in web applications",
 };
 
 export default function RootLayout({
@@ -27,22 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="h-[100dvh] flex flex-col">
-            <HeaderComponent />
-            <main className="flex-1 overflow-y-auto bg-background">
-              {children}
-            </main>
-          </div>
-        </ThemeProvider>
+      <body className={`${ysabeau.className} antialiased`}>
+        <div className="max-w-2xl mx-auto px-8">
+          <HeaderComponent />
+          <main className="flex-1 overflow-y-auto bg-background">
+            <div className="py-4">{children}</div>
+          </main>
+        </div>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import Giscus from "@giscus/react";
-import { useTheme } from "next-themes";
 
 const giscusConfigs = {
   repo: "dorji-dev/site",
@@ -11,10 +10,9 @@ const giscusConfigs = {
 };
 
 const BlogComments = () => {
-  const { theme } = useTheme();
 
   return (
-    <div className="mt-14">
+    <div className="my-14">
       <Giscus
         repo={giscusConfigs.repo as `${string}/${string}`}
         repoId={giscusConfigs.repoId}
@@ -24,7 +22,7 @@ const BlogComments = () => {
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
-        theme={theme === "dark" ? "noborder_dark" : "noborder_light"}
+        theme="light_tritanopia"
       />
     </div>
   );
