@@ -79,7 +79,7 @@ export default function BlogPage() {
                         {new Date(post.date).toLocaleDateString()}
                       </time>
                       <span className="text-muted-foreground/40">•</span>
-                      <span>{post.readingTime} min read</span>
+                      <span>{post.readingTime}</span>
                     </div>
                   </div>
                 </div>
