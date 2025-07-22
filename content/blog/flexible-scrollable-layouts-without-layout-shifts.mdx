@@ -9,7 +9,7 @@ excerpt: "Most developers struggle with creating scrollable layouts that work wi
 
 # TLDR
 
-When designing web layouts, one of the most common challenges developers face is creating scrollable areas that work seamlessly with dynamic content. You've probably seen GitHub's project boards where columns scroll independently without affecting the header or causing layout shifts. Most people assume they're using fixed heights, but there's a much more elegant solution.
+When designing web layouts, one of the most common challenges developers face is creating scrollable areas that work seamlessly with dynamic content. You probably must have faced the issue where you want only a part of the page to be scrollable(especially vertically), but after you are done scrolling the content of the section, you get another scroll behaviour either from a parent container or the default browser vertical scrollbars. You've probably seen GitHub's project boards where columns scroll independently without affecting the header or causing layout shifts. Most people assume they're using fixed heights, but there's a much more elegant solution.
 
 ## The Problem with Fixed Heights
 
@@ -24,11 +24,38 @@ Let's start with what **doesn't** work well:
 ```
 
 **Why fixed heights fail:**
+```
+┌──────────────────────────────────────────────────┐
+│ Parent container(or viewport)                  │
+│ ┌──────────────────────────────────────────────┐ │
+│ │ Header (Dynamic content or 64px)            │ │
+│ └──────────────────────────────────────────────┘ │
+│                                                  │
+│ ┌──────────────────────────────────────────────┐ │
+│ │ Flexible Container                           │ │
+│ │ Dynamic content                              │ │
+│ │                                              │ │
+│ │ ┌──────────────────────────────────────────┐ │ │
+│ │ │ Scrollable Content                      │ │ │
+│ │ │ (h-[600px] or h-[calc(100vh-64px)])     │ │ │
+│ │ │                                         │ │ │
+│ │ │ ████████████████████████████████████    │ │ │
+│ │ │ ████████████████████████████████████    │ │ │
+│ │ │ ████████████████████████████████████    │ │ │
+│ │ │ ████████████████████████████████████    │ │ │
+│ │ │ ████████████████████████████████████    │ │ │
+│ │ │ (Content exceeds container height)      │ │ │
+│ │ └──────────────────────────────────────────┘ │ │
+│ └──────────────────────────────────────────────┘ │
+│                                                  │
+└──────────────────────────────────────────────────┘
+  ↕ Unintended Browser/Parent Scroll
+     (Triggers after scrolling content)
+```
 
-- They don't adapt to different screen sizes
-- Dynamic headers or navigation break the layout
-- Content above or below the scrollable area causes issues
-- Mobile responsiveness becomes a nightmare
+- Poor User Experience: Unexpected scrollbars confuse users and disrupt navigation.
+- Visual Clutter: Multiple scrollbars create a cluttered, less appealing interface.
+- Interaction Conflicts: Unintended scrolling causes accidental content shifts.
 
 ## The Flex Method: A Better Approach
 
