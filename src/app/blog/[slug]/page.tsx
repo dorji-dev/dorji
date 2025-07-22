@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <>
+    <div className="space-y-16">
       {/* Article header */}
       <header className="mb-8">
         <div>
@@ -195,6 +195,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </article>
 
       <BlogComments />
-    </>
+    </div>
   );
 }

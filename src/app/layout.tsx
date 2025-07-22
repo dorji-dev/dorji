@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Ysabeau } from "next/font/google";
 import "./globals.css";
-import HeaderComponent from "@/components/header-component";
+import HeaderComponent from "@/components/header";
+import Footer from "@/components/footer";
 
 const ysabeau = Ysabeau({
   variable: "--font-ysabeau",
@@ -23,11 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${ysabeau.className} antialiased`}>
-        <div className="max-w-2xl mx-auto px-8">
+        <div className="max-w-2xl xl:max-w-3xl mx-auto px-8 flex flex-col min-h-[100dvh]">
           <HeaderComponent />
-          <main className="flex-1 overflow-y-auto bg-background">
-            <div className="py-4">{children}</div>
-          </main>
+          <main className="flex-1 pb-16">{children}</main>
+          <Footer />
         </div>
       </body>
     </html>

@@ -10,21 +10,18 @@ const giscusConfigs = {
 };
 
 const BlogComments = () => {
-
   return (
-    <div className="my-14">
-      <Giscus
-        repo={giscusConfigs.repo as `${string}/${string}`}
-        repoId={giscusConfigs.repoId}
-        category={giscusConfigs.category}
-        categoryId={giscusConfigs.categoryId}
-        mapping="pathname"
-        reactionsEnabled="1"
-        emitMetadata="0"
-        inputPosition="top"
-        theme="light_tritanopia"
-      />
-    </div>
+    <Giscus
+      repo={giscusConfigs.repo as `${string}/${string}`}
+      repoId={giscusConfigs.repoId}
+      category={giscusConfigs.category}
+      categoryId={giscusConfigs.categoryId}
+      mapping="pathname"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme="light_tritanopia"
+    />
   );
 };
 

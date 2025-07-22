@@ -1,4 +1,4 @@
-export default function AboutComponent() {
+export default function About() {
   const professionalStartDate = new Date("2023-04-07");
   const currentDate = new Date();
   const yearsProfessional = Math.floor(
@@ -16,9 +16,7 @@ export default function AboutComponent() {
           {/* Left Column - Personal Info */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h3 className="text-foreground font-medium text-lg">
-                My Story
-              </h3>
+              <h3 className="text-foreground font-medium text-lg">My Story</h3>
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
                   <svg
@@ -55,8 +53,9 @@ export default function AboutComponent() {
                     />
                   </svg>
                   <p className="text-muted-foreground">
-                    Earned 4 certificates of academic excellence from His Majesty
-                    (apparently I was good at school, just not at staying in it)
+                    Earned 4 certificates of academic excellence from His
+                    Majesty (apparently I was good at school, just not at
+                    staying in it)
                   </p>
                 </div>
 

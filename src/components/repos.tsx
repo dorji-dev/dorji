@@ -84,7 +84,7 @@ async function fetchGitHubRepos(username: string): Promise<GitHubRepo[]> {
   }
 }
 
-export default async function ReposComponent() {
+export default async function Repos() {
   const repos = await fetchGitHubRepos("dorji-dev");
 
   const displayRepos = repos.length > 0 ? repos : [];

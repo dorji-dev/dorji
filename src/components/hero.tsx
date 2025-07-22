@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function HeroComponent() {
+export default function Hero() {
   const yearsSinceCoding = Math.floor(
     (Date.now() - new Date("2020-07-01").getTime()) /
       (1000 * 60 * 60 * 24 * 365.25)

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function HeaderComponent() {
+export default function Header() {
   return (
     <header className="py-8 sticky top-0 bg-background z-50 backdrop-blur-sm">
       <nav className="flex items-center gap-4">
